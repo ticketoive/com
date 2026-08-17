@@ -59,7 +59,13 @@
       <label class="check-row"><input type="checkbox" id="scrollVenue">会場名を横に流す</label>
       <label class="check-row"><input type="checkbox" id="scrollTicket">券名を横に流す</label>
       <p class="check-help">※初期状態では流れません。チェックを付けた項目だけ横に流れます。</p>
-    </div>
+
+    <label>背景文字の向き</label>
+    <select id="bgDirection">
+      <option value="reverse" selected>右下 → 左上</option>
+      <option value="normal">右上 → 左下</option>
+    </select>
+
 <label>整理番号表示</label><input id="ticketType" value="S10">
     
     <label>分配設定</label>
@@ -181,6 +187,7 @@ function openPreview(){
   params.set("scrollTitle", document.getElementById("scrollTitle").checked ? "true" : "false");
   params.set("scrollVenue", document.getElementById("scrollVenue").checked ? "true" : "false");
   params.set("scrollTicket", document.getElementById("scrollTicket").checked ? "true" : "false");
+  params.set("bgDirection", document.getElementById("bgDirection").value);
   location.href="5.html?"+params.toString();
 }
 </script>
